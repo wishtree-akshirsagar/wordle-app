@@ -3,15 +3,12 @@
     font-weight: 600 !important;
     text-align: center; 
     font-family: 'Acme', sans-serif !important;
+    color: #226EB5 !important;
 }
 .wordle-header{
     display: flex;
     border-bottom: 1px solid #d3d6da;
-    padding: 10px 0;
+    padding: 10px 10px;
     align-items: center;
-    justify-content: center;
-}
-.subscribe-btn{
-    position: absolute;
-    right: 20px;
+    justify-content: space-between;
 }
