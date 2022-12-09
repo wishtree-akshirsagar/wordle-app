@@ -23,6 +23,7 @@ const Form = () => {
     const [openErrorToaster, setOpenErrorToaster] = useState(false);
     const [email, setEmail] = React.useState("");
     const [error, setError] = React.useState("");
+    const [errorStatus, setErrorStatus] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -30,6 +31,9 @@ const Form = () => {
 
     const handleClose = () => {
         setOpen(false);
+        setErrorStatus(false);
+        setError("");
+        setEmail("");
     };
     const handleCloseToaster = () => {
         setOpenToaster(false);
@@ -45,10 +49,10 @@ const Form = () => {
     const handleSubmitEmail = async () => {
         if (email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i)) {
             try {
-                const response = await Axios.post("", {
-                    email,
-                });
-                if (response.status == 201) {
+                const response = await Axios.get(
+                    `http://127.0.0.1:5000/user/getUserProfile/${email}`
+                );
+                if (response.status == 200) {
                     console.log("Email submitted successfully");
 
                     setOpen(false);
@@ -64,6 +68,7 @@ const Form = () => {
             }
         } else {
             setEmail("");
+            setErrorStatus(true);
             console.log("in-valid email", email);
             // setOpenErrorToaster(true);
             setError("Invalid email addrress");
@@ -122,7 +127,7 @@ const Form = () => {
                             variant="standard"
                             value={email}
                             onChange={(e) => handleEmailChange(e)}
-                            error={error}
+                            error={errorStatus}
                             helperText={error}
                         />
                     </DialogContent>
