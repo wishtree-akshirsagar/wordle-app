@@ -6,8 +6,8 @@ import Form from "./Form";
 const Header = () => {
     return (
     <div className="wordle-header">
-        <Typography className="header-heading">
-        Wordle
+        <Typography className="header-heading" >
+            Wordle
         </Typography>
         <div className="subscribe-btn">
         <Form/>

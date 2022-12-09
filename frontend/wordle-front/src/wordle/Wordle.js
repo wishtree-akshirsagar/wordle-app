@@ -3,7 +3,7 @@ import Header from "./Header";
 
 const Wordle = () => {
     return (
-    <div>
+    <div >
         <Header/>
     </div>
     )
