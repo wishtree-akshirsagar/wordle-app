@@ -1,7 +1,17 @@
 .header-heading{
     font-size: 36px !important;
     font-weight: 600 !important;
-    text-align: center;
+    text-align: center; 
+    font-family: 'Acme', sans-serif !important;
+}
+.wordle-header{
+    display: flex;
     border-bottom: 1px solid #d3d6da;
     padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+.subscribe-btn{
+    position: absolute;
+    right: 20px;
 }
