@@ -6,6 +6,7 @@ import Matrix from "./wordle/Matrix";
 import BackGround from './wordle/background.jpg';
 
 function App() {
+    document.title = "Wordle";
     return (
         <div >
             <Wordle style={{height : "20%"}}/>
@@ -17,7 +18,6 @@ function App() {
                 height: "calc(100vh - 75px)"}}>
             <Matrix></Matrix>
             </div>
-           
         </div>
     );
 }
