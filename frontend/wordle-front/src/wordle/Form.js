@@ -6,6 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import './form.css'
 
 const Form = () => {
     const [open, setOpen] = React.useState(false);
@@ -24,7 +25,7 @@ const Form = () => {
                 Subscribe wordle
             </Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Subscribe To Wordle</DialogTitle>
+                <DialogTitle className="subscribe-title">Subscribe To Wordle</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         To subscribe to wordle, please enter your email address
@@ -40,9 +41,9 @@ const Form = () => {
                         variant="standard"
                     />
                 </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Subscribe</Button>
+                <DialogActions style={{paddingRight:"24px",paddingBottom:"20px"}}>
+                    <Button onClick={handleClose} variant="outlined">Cancel</Button>
+                    <Button onClick={handleClose} variant="contained">Subscribe</Button>
                 </DialogActions>
             </Dialog>
         </div>
