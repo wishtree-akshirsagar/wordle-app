@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import Axios from "axios";
 import MuiAlert from "@mui/material/Alert";
 import "./form.css";
+import { UserContext } from "../App";
 
 import Snackbar from "@mui/material/Snackbar";
 
@@ -24,6 +25,7 @@ const Form = () => {
     const [email, setEmail] = React.useState("");
     const [error, setError] = React.useState("");
     const [errorStatus, setErrorStatus] = useState(false);
+    const {word, setWord} = useContext(UserContext)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -53,8 +55,8 @@ const Form = () => {
                     `http://127.0.0.1:5000/user/getUserProfile/${email}`
                 );
                 if (response.status == 200) {
-                    console.log("Email submitted successfully");
-
+                    console.log("Email submitted successfully", response);
+                    setWord(response.data.word);
                     setOpen(false);
                     setEmail("");
                     setError("");

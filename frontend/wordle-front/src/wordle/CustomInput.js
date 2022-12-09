@@ -18,10 +18,10 @@ const CustomTextField = styled(TextField)({
         borderColor: 'rgba(0, 0, 0, 0.23)',
       },
       '&:hover fieldset': {
-        borderColor: '#FFFFFF',
+        borderColor: 'rgba(0, 0, 0, 0.23)',
       },
       '&.Mui-focused fieldset': {
-        borderColor: '#FFFFFF',
+        borderColor: 'rgba(0, 0, 0, 0.23)',
       },
       '&.Mui-disabled fieldset': {
         borderColor: 'rgba(0, 0, 0, 0.23)',
