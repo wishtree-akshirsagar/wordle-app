@@ -9,6 +9,8 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useForm } from "react-hook-form";
 import Axios from "axios";
 import MuiAlert from "@mui/material/Alert";
+import "./form.css";
+
 import Snackbar from "@mui/material/Snackbar";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -88,7 +90,9 @@ const Form = () => {
             </Button>
             <Dialog open={open} onClose={handleClose}>
                 <form onSubmit={handleSubmitEmail}>
-                    <DialogTitle>Subscribe To Wordle</DialogTitle>
+                    <DialogTitle className="subscribe-title">
+                        Subscribe To Wordle
+                    </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
                             To subscribe to wordle, please enter your email
@@ -109,9 +113,15 @@ const Form = () => {
                             helperText={error}
                         />
                     </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose}>Cancel</Button>
-                        <Button onClick={handleSubmitEmail}>Subscribe</Button>
+                    <DialogActions
+                        style={{ paddingRight: "24px", paddingBottom: "20px" }}
+                    >
+                        <Button onClick={handleClose} variant="outlined">
+                            Cancel
+                        </Button>
+                        <Button onClick={handleSubmitEmail} variant="contained">
+                            Subscribe
+                        </Button>
                     </DialogActions>
                 </form>
             </Dialog>

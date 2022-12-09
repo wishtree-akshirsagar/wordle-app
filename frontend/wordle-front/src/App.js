@@ -7,7 +7,7 @@ function App() {
     return (
         <div>
             <Wordle />
-            <Form />
+           
         </div>
     );
 }
