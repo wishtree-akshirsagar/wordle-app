@@ -41,16 +41,17 @@ const Matrix = () => {
 		let color = ""
 		// console.log("check",mainWord.indexOf(letter) > -1 && mainWord.indexOf(letter) != position )
 		if (letter == "") {
-			color = "#f5f5f5"
+			color = "#ececed"
 		}
 		else if (mainWord.indexOf(letter) > -1 && mainWord.indexOf(letter) != position) {
-			color = "#eeff41"
+			color = "#9e9e9e"
 		}
 		else if (mainWord.indexOf(letter) > -1 && mainWord.indexOf(letter) == position) {
 			color = "#00c853"
 		}
 		else if (mainWord.indexOf(letter) == -1) {
-			color = "#9e9e9e"
+			
+			color="#eeff41"
 		}
 
 		console.log("color", color);
@@ -86,9 +87,10 @@ const Matrix = () => {
 			<div className='input_word'>
 				<TextField
 					id="standard-basic"
-					label="Enter Word"
-					variant="standard"
+					// label="Enter Word"
+					// variant="standard"
 					value={userWord}
+					placeholder="Enter Word"
 					onChange={handleChnaheUserWord}
 				/>
 				<Button size="small" onClick={handleEnter} variant="contained">Enter</Button>

@@ -12,9 +12,7 @@ function App() {
             <Wordle style={{height : "20%"}}/>
             {/* <Form /> */}
             <div className="matrix" style={{ 
-                backgroundImage: `url(${BackGround})`,
-                backgroundSize: 'cover', 
-                backgroundRepeat: 'no-repeat',
+               
                 height: "calc(100vh - 75px)"}}>
             <Matrix></Matrix>
             </div>
