@@ -1,26 +1,24 @@
 import { TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
-const CustomTextField = styled(TextField)({
-    '& label.Mui-focused': {
-      color: '#FFFFFF',
-    },
-    '& label.Mui-error': {
-        color: '#f44336',
-      },
-    "&.erroredLabel": {
-      color: "#f44336"
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'green',
-    },
+const CustomIput = styled(TextField)({
     '& .MuiOutlinedInput-root': {
+     
       '& fieldset': {
         borderColor: 'rgba(0, 0, 0, 0.23)',
+        borderWidth:"1px",
+
       },
+<<<<<<< HEAD
       '&:hover fieldset': {
         borderColor: 'rgba(0, 0, 0, 0.23)',
+=======
+      '& input':{
+         padding: "12.5px 14px",
+>>>>>>> f27de20b46f2646abceb9769dac79969a82bf6b7
       },
+      
       '&.Mui-focused fieldset': {
+<<<<<<< HEAD
         borderColor: 'rgba(0, 0, 0, 0.23)',
       },
       '&.Mui-disabled fieldset': {
@@ -29,9 +27,14 @@ const CustomTextField = styled(TextField)({
       },
       '&.Mui-error fieldset': {
         borderColor: '#f44336',
+=======
+        borderColor: '#d3d6da',
+        borderWidth:"1px"
+
+>>>>>>> f27de20b46f2646abceb9769dac79969a82bf6b7
       },
       
     },
   });
 
-export default CustomTextField;
+export default CustomIput;
