@@ -5,14 +5,14 @@ import Form from "./wordle/Form";
 import Matrix from "./wordle/Matrix";
 
 function App() {
+    document.title = "Wordle";
     return (
         <div>
             <Wordle />
             <Form />
             <div className="matrix">
-            <Matrix></Matrix>
+                <Matrix></Matrix>
             </div>
-           
         </div>
     );
 }
