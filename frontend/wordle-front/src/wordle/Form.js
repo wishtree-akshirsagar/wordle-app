@@ -18,13 +18,9 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const Form = () => {
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     formState: { errors },
-    // } = useForm();
     const [open, setOpen] = React.useState(false);
     const [openToaster, setOpenToaster] = useState(false);
+    const [openErrorToaster, setOpenErrorToaster] = useState(false);
     const [email, setEmail] = React.useState("");
     const [error, setError] = React.useState("");
 
@@ -37,6 +33,10 @@ const Form = () => {
     };
     const handleCloseToaster = () => {
         setOpenToaster(false);
+    };
+
+    const handleCloseErrorToaster = () => {
+        setOpenErrorToaster(false);
     };
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -60,29 +60,42 @@ const Form = () => {
                 }
             } catch (error) {
                 console.log("Error from backend");
+                setOpenErrorToaster(true);
             }
         } else {
             setEmail("");
             console.log("in-valid email", email);
-
+            // setOpenErrorToaster(true);
             setError("Invalid email addrress");
         }
     };
 
-    // const handleEmailChange = (e) => {
-    //     console.log(e.target.value);
-    //     setEmail(e.target.value);
-    // };
-
     return (
         <div>
-            <Snackbar open={openToaster}>
+            <Snackbar
+                open={openToaster}
+                autoHideDuration={3000}
+                onClose={handleCloseToaster}
+            >
                 <Alert
                     onClose={handleCloseToaster}
                     severity="success"
                     sx={{ width: "100%" }}
                 >
                     Email saved successfully!
+                </Alert>
+            </Snackbar>
+            <Snackbar
+                open={openErrorToaster}
+                autoHideDuration={3000}
+                onClose={handleCloseErrorToaster}
+            >
+                <Alert
+                    onClose={handleCloseErrorToaster}
+                    severity="error"
+                    sx={{ width: "100%" }}
+                >
+                    Something went wrong!
                 </Alert>
             </Snackbar>
             <Button variant="outlined" onClick={handleClickOpen}>
