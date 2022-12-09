@@ -1,0 +1,19 @@
+.header-heading{
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    text-align: center; 
+    font-family: 'Acme', sans-serif !important;
+    color: #226EB5 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wordle-header{
+    width: 80%;
+    margin: auto;
+    display: flex;
+   
+    padding: 10px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
